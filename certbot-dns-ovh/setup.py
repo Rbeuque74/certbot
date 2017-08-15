@@ -10,7 +10,7 @@ version = '0.18.0.dev0'
 install_requires = [
     'acme=={0}'.format(version),
     'certbot=={0}'.format(version),
-    'cloudflare>=1.5.1',
+    'ovh>=0.3.5',
     'mock',
     # For pkg_resources. >=1.0 so pip resolves it to a version cryptography
     # will tolerate; see #2599:
@@ -24,9 +24,9 @@ docs_extras = [
 ]
 
 setup(
-    name='certbot-dns-cloudflare',
+    name='certbot-dns-ovh',
     version=version,
-    description="Cloudflare DNS Authenticator plugin for Certbot",
+    description="OVH DNS Authenticator plugin for Certbot",
     url='https://github.com/certbot/certbot',
     author="Certbot Project",
     author_email='client-dev@letsencrypt.org',
@@ -62,8 +62,8 @@ setup(
     },
     entry_points={
         'certbot.plugins': [
-            'dns-cloudflare = certbot_dns_cloudflare.dns_cloudflare:Authenticator',
+            'dns-ovh = certbot_dns_ovh.dns_ovh:Authenticator',
         ],
     },
-    test_suite='certbot_dns_cloudflare',
+    test_suite='certbot_dns_ovh',
 )
